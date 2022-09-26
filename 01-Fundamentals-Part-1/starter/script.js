@@ -44,7 +44,7 @@ let age = 30;
 age = 31;
 
 //si no van a cambiar en el futuro:
-const birthYear = 1991;
+let birthYear = 1991;
 //birthYear = 2007; //dará un error de assignment to constant variable
 
 //const job; //error de missing initializer in const declaration (a una constante no la puedo dejar sin valor al declararla)
@@ -90,3 +90,45 @@ const isFullAge = ageSarah >= 18;
 let z, y;
 z = y = 25 - 10 - 5;
 console.log(z, y); //esto me dará en consola 10 10
+
+//String:
+const jonas = "I am " + firstName + ', a ' + (now - birthYear) + ' years old';
+console.log(jonas);
+
+//Cadena de plantilla (template literals): `esto es html` y ${aquí meto js, cualquier cosa}
+const jonasNew = `I am ${firstName}, a ${job} of ${now - birthYear} years old`;
+console.log(jonasNew);
+
+console.log(`This is an example of other String template literals`);
+
+//New line: \n\
+console.log('String with \n\ multiple \n\ lines');
+
+//Otra manera de hacer múltiples líneas, presionando enter pero dentro de ``
+console.log(`String
+multiple
+lines`);
+
+//Introducir emojis en windows: windows + .
+
+//Condicional:
+age = 17;//ya la tengo arriba declarada y  no puedo volver a poner const age = 19;
+const isOldEnough = age >= 18;
+if (isOldEnough) {
+    console.log('Sarah can start driving license 🤓')
+}
+if (!isOldEnough) {
+    const yearsLeft = 18 - age;
+    console.log(`Sorry Sarah, you are too young for that! You have to wait another ${yearsLeft} years`);
+}
+birthYear = 1991;
+let century;
+if(birthYear<= 2000) {
+     century = 20;
+}if(birthYear>2000) {
+     century = 21;
+}
+console.log(century);
+
+
+
