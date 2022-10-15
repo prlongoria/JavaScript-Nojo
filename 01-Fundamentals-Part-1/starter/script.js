@@ -204,3 +204,53 @@ if (favourite != 23) {
     console.log('Why not 23?');
 }
 
+//Switch:
+const day = "sunday";
+
+switch(day) {
+    case 'monday': //day === monday
+        console.log('Plan course structure');
+        console.log('Go to coding meetup');
+        break;//si no pongo esto, me ejecutará todo lo siguiente hasta que encuentre un break
+    case'tuesday':
+        console.log('Prepare theory videos');
+        break;
+    case'wednesday'://al no poner nada aquí, si el day es wednesday saldrá lo del thursday
+        
+    case'thursday':
+        console.log('Write code examples');
+        break;
+    case'friday':
+        console.log('Record videos');
+        break;
+    case'saturday':
+        
+    case'sunday':
+        console.log('Enjoy the weekend:D)');
+        break;
+    default:
+        console.log('Not a valid day!');
+}
+
+//Statemen and expressions:expressions producen valores, statement como oraciones compeltas que traducen nuestras acciones
+console.log(`I´m ${2037 - 1991} years old`); //toda esta línea es una statement, declaración o estado, mientras que lo que es ${} es una expresión porque da como resultado un valor
+
+//Operador condicional (operador ternario) ES UNA EXPRESIÓN Y REGRESA UN VALOR: es un if-else en una sola línea
+const age1 = 2;
+age1 >= 18 ? console.log('I like to drink wine') : console.log('I like to drink water'); //si la edad es >=18 imprime I like to drink wine, y sino, imprime i like to drink water.
+
+//También puedo guardarlo en una constante:
+const drink = age1 >= 18 ? 'wine' : 'water';
+console.log(drink);
+
+//Esto en un bloque if-else, es mucho más código:
+let drink2;//debo declarar la variable fuera del bloque if-else y darle el valor que quiero dentro de dicho bloque
+if(age1 >= 18) {
+    drink2 = 'wine';
+} else {
+    drink2 = 'water';
+}
+console.log(drink2);
+
+//Puedo meter el operador ternario en una declaración porque es una expresión (me da un valor), pero no un if-else (porque es un statement y no regresa un valor sino que es un trozo de código):
+console.log(`I like to drink ${age1 >= 18 ? 'wine' : 'water'}`);
