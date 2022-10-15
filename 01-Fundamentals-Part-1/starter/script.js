@@ -1,3 +1,5 @@
+//Aquí voy metiendo las lecciones:
+
 let js = "amazing";
 console.log(40 + 15 + 23 - 10);
 console.log ('Jonas');
@@ -130,5 +132,75 @@ if(birthYear<= 2000) {
 }
 console.log(century);
 
+//Type Conversion(convertir manualmente un tipo en otro):
 
+const inputYear = "1991";
+console.log(Number(inputYear), inputYear); //Number(string)convierte un string a un número
+console.log(Number(inputYear) + 18);
+
+console.log(Number('Jonas'));//esto es imposible de convertir a número:NaN
+console.log(typeof NaN);//me dirá que el tipo de NaN es un número
+
+console.log(String(23));//Así convierto a un string un número
+
+//Type Coercion(Javascript convierte automáticamente):
+
+console.log('I am ' + 23 + ' years old');//23 se convierte automáticamente a un string
+console.log('23' - '10' - 3);//convierte a los string automáticamente a number
+console.log('23' + '10' + 3);//concatena los tres como tres string y lo devuelve como string
+console.log('23' + '10' - 3);//me devuelve el string 2307, es decir resta 10 y 3 y lo concatena con 23, pero lo devuelve como número
+console.log('23' * '2');//hace la multiplicación y devuelve un number, aunque le estoy metiendo strings
+console.log('23' / '2');//idem
+
+let n = '1' + 1;//concatena dos string
+n = n - 1;//el operador - convierte el string a number y hace la operación
+console.log(n);
+
+console.log(5+3+'10');//hace la operación de 5+3=8, este 8 lo convierte a string y lo concatena con 10 dando el string 810
+//Las operaciones las hace de izda a drcha, el - opera y convierte a número y el + concatena y convierte a string
+
+//Boolean
+// falsy values: 0, "", undefined, null, NaN, false
+console.log(Boolean(0));//false
+console.log(Boolean(undefined));//false
+console.log(Boolean('Jonas'));//true
+console.log(Boolean({}));//true
+console.log(Boolean(''));//false
+
+const money = 0;
+if (money) {
+    console.log("Don`t spend it all");
+}else {
+    console.log("You should get a job!");
+}
+
+let height=175;
+if (height) {
+    console.log('Height is defined');//si height es 0 o no le pongo valor
+}else {
+    console.log('Height is undefined');//si height tiene un valor definido
+}
+
+//Operadores de igualdad
+const ageChild = 18;
+if (ageChild === 18) { //=== igualdad estricta. == igualdad flexible, me igualaría '18' con 18 porque entraría en acción la coercion y convertirá el string en number EVITARLA PORQUE ME PUEDE DAR ERRORES EN MI CÓDIGO
+    console.log("Your are an adult");
+}
+
+const favourite = Number (prompt ("What`s your favourite number?")); //si pongo ese Number me lo convierte a numero pero sino será un string
+console.log(favourite);
+console.log(typeof favourite);
+if(favourite === 23) {
+    console.log("23 is an amazing number");//sale si le pongo ==, pero si pongo === no sale porque 23 es un string (si en el prompt no he puesto Number para que lo convierta) y él busca que sea un número
+} else if (favourite === 7) {
+    console.log('7 is also cool');
+}else if (favourite === 9) {
+    console.log('9 is also cool');
+}else { 
+    console.log('This number is not 23 or 7 or 9');
+}
+
+if (favourite != 23) {
+    console.log('Why not 23?');
+}
 
