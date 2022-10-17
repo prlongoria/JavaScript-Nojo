@@ -135,3 +135,45 @@ console.log(age4, age5, age6)
 const ages = [calcAge4(years2[0]), calcAge4(years2[1]), calcAge4(years2[years.length-1])];
 console.log(ages);
 
+
+//Add elements to an array:
+// const friends = ['Michael', 'Steven', 'Peter'];
+friends.push('Jay');//El método push() añade Jay al final del array friends y me dice la longitud del nuevo array
+console.log(friends);
+
+const lengthArray = friends.push();//me da la longitud del array friends
+console.log(lengthArray);
+
+friends.unshift('John');//unshift() añade un elemento al inicio del array y me da su longitud
+console.log(friends);
+
+//Remove elements from array:
+friends.pop();//elimina el último elemento del array y me da su longitud
+console.log(friends);
+
+const poppedElement = friends.pop();//esta const guarda el array friends menos el último elemento
+console.log(poppedElement);//y aquí se imprime ese último elemento que eliminó
+
+friends.shift();//elimina el primer elemento del array me da su longitud
+console.log(friends);
+
+console.log(friends.indexOf('Michael'));//me da la posición en que se encuentra Michael en el array
+console.log(friends.indexOf('Patricia'));//como este elemento no existe en mi array, me da -1
+
+console.log(friends.includes('Michael'));//devuelve true
+console.log(friends.includes('Patricia'));//devuelve false
+
+friends.push(23);//añado número 23
+console.log(friends);
+console.log(friends.includes('23'));//me da false porque aquí meto un string en lugar de un número
+console.log(friends.includes(23));//true porque esto sí es un número
+
+if (friends.includes('Steven')) {
+    console.log('You have a friend called Steven');
+};
+if (friends.includes('Peter')) {
+    console.log('You have a friend called Peter');//no hace nada porque el array no contiene Peter
+
+    
+}
+
