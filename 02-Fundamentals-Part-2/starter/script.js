@@ -95,4 +95,43 @@ function fruitProcessor(apples, oranges) {//ahí en los () van los parámetros, 
 }
 console.log(fruitProcessor(2, 3));
 
-//
+//Arrays:
+const friend1 = 'Michael';
+const friend2 = 'Steven';
+const friend3 = 'Peter';
+
+const friends = ['Michael', 'Steven', 'Peter'];
+console.log(friends);
+
+const years = new Array(1991, 1984, 2000);//otra manera de crear un array es esta
+console.log(years[1]);
+
+console.log(friends[0]);
+console.log(friends.length);//me da el número de elementos del array
+console.log(friends[friends.length-1]);//imprime el último elemento de mi array
+
+friends[2] = 'Jay';//así consigo que cambie Peter por Jay
+console.log(friends[2]);
+//Ojo, declaré el array friends como una const, así que sólo puedo mutar elemento a elemento, pero no el array entero del tirón
+
+const firstName = 'Jonas';
+const jonas = [firstName, 'Schmedtmann', 2037 - 1991, 'teacher', friends];//Puedo meterle distintos tipos al array
+console.log(jonas);
+
+//Exercise:
+function calcAge4(birthYear) {
+    const age = 2037 - birthYear;
+    return 2037 - birthYear;
+}
+const years2 = [1990, 1967, 2002, 2010, 2018];
+
+console.log(calcAge4(years2));//NaN, no puedo hacer esto
+
+const age4 = calcAge4(years2[0]);
+const age5 = calcAge4(years2[1]);
+const age6 = calcAge4(years2[years.length-1]);//para que coja el último elemento de mi array
+console.log(age4, age5, age6)
+
+const ages = [calcAge4(years2[0]), calcAge4(years2[1]), calcAge4(years2[years.length-1])];
+console.log(ages);
+

@@ -57,3 +57,4 @@ function checkWinner(Dolphins, Koalas) {//aquí meto los parámetros, y también
 const winner = checkWinner(averageDolphins, averageKoalas);// y aquí ya meto los valores para esos parámetros y que declaré antes de la función
 console.log(winner);
 
+
