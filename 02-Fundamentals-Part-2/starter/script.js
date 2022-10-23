@@ -5,175 +5,276 @@
 //principio del script y que proteja todo el código de este archivo
 //Esto evita errores accidentales: prohibe hacer ciertas cosas y además, crea errores visibles en
 //determinadas situaciones en las que sin este modo de restricción, Javascript fallará sin que yo sepa que he cometido un error
-let hasDriversLicense = false;
-const passTest = true;
+// let hasDriversLicense = false;
+// const passTest = true;
 
-if(passTest) hasDriversLicense = true;//Si escribiera mal adrede la variable y en cosola aparece el error, sin embargo, si no pongo use strict no me aparecerá el error, sólo no ejecuta el código
-if(hasDriversLicense) console.log('I can drive!');
+// if(passTest) hasDriversLicense = true;//Si escribiera mal adrede la variable y en cosola aparece el error, sin embargo, si no pongo use strict no me aparecerá el error, sólo no ejecuta el código
+// if(hasDriversLicense) console.log('I can drive!');
 
-//const interface = 'Audio';//Aquí me saltará un error porque la palabra interface es reservada, y el modo estricto me lo detecta y  me lo canta en consola
+// //const interface = 'Audio';//Aquí me saltará un error porque la palabra interface es reservada, y el modo estricto me lo detecta y  me lo canta en consola
 
-//Functions:
-function logger() {//aquí no reservo espacio para valores porque sólo quiero que haga siempre lo mismo sin necesidad de parámetros a los que asignarles un valor cuando llame a esta función
-    console.log('My name is Jonas');//Esta función no retorna un valor, pro eso no le meto parámetros para luego asignarles un valor(constante o variable)
-}
-logger();//calling, running or invoking the function, si no hago esto, nunca se ejecutará esa función
+// //Functions:
+// function logger() {//aquí no reservo espacio para valores porque sólo quiero que haga siempre lo mismo sin necesidad de parámetros a los que asignarles un valor cuando llame a esta función
+//     console.log('My name is Jonas');//Esta función no retorna un valor, pro eso no le meto parámetros para luego asignarles un valor(constante o variable)
+// }
+// logger();//calling, running or invoking the function, si no hago esto, nunca se ejecutará esa función
 
-function fruitProcessor(apples, oranges) {//ahí en los () van los parámetros, estos reservan espacios vacíos a rellenar cuando llamemos a la función para que se ejecute y le metemos su valor en el paréntesis en ese momento
-    console.log(apples, oranges);
-    const juice = `Juice with ${apples} apples and ${oranges} oranges.`;
-    return juice;
-}
-//Ahora debo llamarla para que se ejecute:
-fruitProcessor(5, 0);//esto imprime en consola solamente 5 0, pero no imprime el juice porque tengo un return y no imprime en consola
+// function fruitProcessor(apples, oranges) {//ahí en los () van los parámetros, estos reservan espacios vacíos a rellenar cuando llamemos a la función para que se ejecute y le metemos su valor en el paréntesis en ese momento
+//     console.log(apples, oranges);
+//     const juice = `Juice with ${apples} apples and ${oranges} oranges.`;
+//     return juice;
+// }
+// //Ahora debo llamarla para que se ejecute:
+// fruitProcessor(5, 0);//esto imprime en consola solamente 5 0, pero no imprime el juice porque tengo un return y no imprime en consola
 
-const appleJuice = fruitProcessor(5, 0);//así lo meto en una constante
-console.log(appleJuice);//así imprime el return de la función fruitProcessor
-//O también puedo hacerlo así:
-console.log(fruitProcessor(5, 0));//Y esto me da el mismo resultado que las líneas 29 y 30
+// const appleJuice = fruitProcessor(5, 0);//así lo meto en una constante
+// console.log(appleJuice);//así imprime el return de la función fruitProcessor
+// //O también puedo hacerlo así:
+// console.log(fruitProcessor(5, 0));//Y esto me da el mismo resultado que las líneas 29 y 30
 
-const appleOrangeJuice = fruitProcessor(2, 4);
-console.log(appleOrangeJuice);
+// const appleOrangeJuice = fruitProcessor(2, 4);
+// console.log(appleOrangeJuice);
 
-//const age1 = calcAge1(1990);//puedo declarar aquí la constante, antes de declarar la función, o la puedo declarar después, funcionará igualmente
-//Function declaration:
-function calcAge1(birthYear) {
-    const age = 2037 - birthYear;
-    //return age;
-    return 2037 - birthYear;
-}
-console.log(calcAge1(1991)); 
+// //const age1 = calcAge1(1990);//puedo declarar aquí la constante, antes de declarar la función, o la puedo declarar después, funcionará igualmente
+// //Function declaration:
+// function calcAge1(birthYear) {
+//     const age = 2037 - birthYear;
+//     //return age;
+//     return 2037 - birthYear;
+// }
+// console.log(calcAge1(1991)); 
 
-//Function expression:(devuelve valor que guardo en una constante)
-const calcAge2 = function(birthYear) { //puedo meter una función en una variable
-    return 2037 - birthYear;
-}//en este caso, no puedo declarar la constante age2 antes ya que estoy metiendo la función en una constante, no funcionaría
-console.log(calcAge2(1991));
+// //Function expression:(devuelve valor que guardo en una constante)
+// const calcAge2 = function(birthYear) { //puedo meter una función en una variable
+//     return 2037 - birthYear;
+// }//en este caso, no puedo declarar la constante age2 antes ya que estoy metiendo la función en una constante, no funcionaría
+// console.log(calcAge2(1991));
 
-const age2 = calcAge2(1991);
-const age1 = calcAge1(1990);//aquí la declaro después y veo que funciona igual que cuando la declaré antes de declarar la función, porque a esta función no la meto en una constante.
-console.log(age1, age2);//así imprimo el resultado de ambas funciones con los valores que le asigné a sus parámetros
+// const age2 = calcAge2(1991);
+// const age1 = calcAge1(1990);//aquí la declaro después y veo que funciona igual que cuando la declaré antes de declarar la función, porque a esta función no la meto en una constante.
+// console.log(age1, age2);//así imprimo el resultado de ambas funciones con los valores que le asigné a sus parámetros
 
 
-//const calcAge3 = function(birthYear) {
-//    return 2037 - birthYear;
+// //const calcAge3 = function(birthYear) {
+// //    return 2037 - birthYear;
+// //}
+
+// //función flecha: la expresión que pongo en linea 63 es el equivalente a la función de las lineas 58-60
+// const calcAge3 = birthYear => 2037 - birthYear;//cojo el parámetro birthyear y después de la flecha le pongo el valor que quiero que tenga, y a continuación lo meto en una constante
+// //no necesito ni llaves ni el return en la función flecha. Lo que sí que debo hacer es llamarla para que se ejecute:
+// console.log (calcAge3(1992));//o de otra forma sería:
+// const age3 = calcAge3(1992);
+// console.log (age3);//imprime lo mismo que la línea 65
+
+// const yearsUntilRetirement = birthYear => {
+//     const age = 2037 - birthYear;
+//     const retirement = 65 - age;
+//     return retirement;
+// }
+// console.log(yearsUntilRetirement(1991));//1991 es el valor del parámetro birthyear que es lo que pongo justo antes de la flecha
+
+// //si tuviera varios parámetros:
+// const yearsUntilRetirement2 = (birthYear, firstName) => {
+//     const age = 2037 - birthYear;
+//     const retirement = 65 - age;
+//     return `${firstName} retires in ${retirement} years`;
+// }
+// console.log(yearsUntilRetirement2(1991, 'Jonas'));
+// console.log(yearsUntilRetirement2(1980, 'Bob'));//Veo que puedo poner los valores que quiera a los parámetros, las veces que quiera
+
+// //Functions calling other functions:
+// function cutFruitPieces(fruit) {
+//     return fruit * 4;
+// }
+
+// function fruitProcessor(apples, oranges) {//ahí en los () van los parámetros, estos reservan espacios vacíos a rellenar cuando llamemos a la función para que se ejecute y le metemos su valor en el paréntesis en ese momento
+//     const applePieces = cutFruitPieces(apples);
+//     const orangePieces = cutFruitPieces(oranges);
+//     const juice = `Juice with ${applePieces} apples and ${orangePieces} oranges.`;
+//     return juice;
+// }
+// console.log(fruitProcessor(2, 3));
+
+// //Arrays:
+// const friend1 = 'Michael';
+// const friend2 = 'Steven';
+// const friend3 = 'Peter';
+
+// const friends = ['Michael', 'Steven', 'Peter'];
+// console.log(friends);
+
+// const years = new Array(1991, 1984, 2000);//otra manera de crear un array es esta
+// console.log(years[1]);
+
+// console.log(friends[0]);
+// console.log(friends.length);//me da el número de elementos del array
+// console.log(friends[friends.length-1]);//imprime el último elemento de mi array
+
+// friends[2] = 'Jay';//así consigo que cambie Peter por Jay
+// console.log(friends[2]);
+// //Ojo, declaré el array friends como una const, así que sólo puedo mutar elemento a elemento, pero no el array entero del tirón
+
+// const firstName = 'Jonas';
+// const jonas = [firstName, 'Schmedtmann', 2037 - 1991, 'teacher', friends];//Puedo meterle distintos tipos al array
+// console.log(jonas);
+
+// //Exercise:
+// function calcAge4(birthYear) {
+//     const age = 2037 - birthYear;
+//     return 2037 - birthYear;
+// }
+// const years2 = [1990, 1967, 2002, 2010, 2018];
+
+// console.log(calcAge4(years2));//NaN, no puedo hacer esto
+
+// const age4 = calcAge4(years2[0]);
+// const age5 = calcAge4(years2[1]);
+// const age6 = calcAge4(years2[years.length-1]);//para que coja el último elemento de mi array
+// console.log(age4, age5, age6)
+
+// const ages = [calcAge4(years2[0]), calcAge4(years2[1]), calcAge4(years2[years.length-1])];
+// console.log(ages);
+
+
+// //Add elements to an array:
+// // const friends = ['Michael', 'Steven', 'Peter'];
+// friends.push('Jay');//El método push() añade Jay al final del array friends y me dice la longitud del nuevo array
+// console.log(friends);
+
+// const lengthArray = friends.push();//me da la longitud del array friends
+// console.log(lengthArray);
+
+// friends.unshift('John');//unshift() añade un elemento al inicio del array y me da su longitud
+// console.log(friends);
+
+// //Remove elements from array:
+// friends.pop();//elimina el último elemento del array y me da su longitud
+// console.log(friends);
+
+// const poppedElement = friends.pop();//esta const guarda el array friends menos el último elemento
+// console.log(poppedElement);//y aquí se imprime ese último elemento que eliminó
+
+// friends.shift();//elimina el primer elemento del array me da su longitud
+// console.log(friends);
+
+// console.log(friends.indexOf('Michael'));//me da la posición en que se encuentra Michael en el array
+// console.log(friends.indexOf('Patricia'));//como este elemento no existe en mi array, me da -1
+
+// console.log(friends.includes('Michael'));//devuelve true
+// console.log(friends.includes('Patricia'));//devuelve false
+
+// friends.push(23);//añado número 23
+// console.log(friends);
+// console.log(friends.includes('23'));//me da false porque aquí meto un string en lugar de un número
+// console.log(friends.includes(23));//true porque esto sí es un número
+
+// if (friends.includes('Steven')) {
+//     console.log('You have a friend called Steven');
+// };
+// if (friends.includes('Peter')) {
+//     console.log('You have a friend called Peter');//no hace nada porque el array no contiene Peter
+// }
+
+//Objetos:
+const jonasArray = [
+    'Jonas', 
+    'Schmedtmann',
+    2037 - 1991,
+    'teacher',
+    'Michael', 'Peter', 'Steven'
+];
+
+const jonasObject = {//aqui meto las propiedades del objeto jonasObject
+    firstName: 'Jonas',
+    lastName: 'Schmedtmann',
+    age: 2037-1991,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven']
+};
+console.log(jonasObject);
+
+//Obtener propiedades del objeto:
+console.log(jonasObject.lastName);//esta es una forma
+console.log(jonasObject['lastName']);//otra forma
+
+const nameKey = 'Name';//creo una key para el Name de las propiedades del objeto
+console.log(jonasObject['first' + nameKey]);//y así consigo que imprima firstName
+console.log(jonasObject['last' + nameKey]);//y así el lastName
+
+const interesetedIn =prompt('What do you want to know about Jonas? Choose between firstName, lastName, age, job and friends');
+//asdfconsole.log(jonasObject[interesetedIn]);//así me imprimirá lo que el usuario meta en el prompt
+if(jonasObject[interesetedIn]) {
+    console.log(jonasObject[interesetedIn]);
+} else {
+    console.log('Wrong request! Choose between firstName, lastName, age, job and friends');
+};
+
+//Puedo añadir más propiedades a mi objeto, así:
+jonasObject.location = 'Portugal';//puedo añadirlo con .
+jonasObject['twitter'] = '@jonasschmedtman';//puedo añadirlo con []
+console.log(jonasObject);//imprime el jonasObject con location y su twitter
+
+//Challenge: Jonas has 3 friends, and his best friend is called Michael:
+console.log(jonasObject.firstName + ' has ' +  jonasObject.friends.length + ' friends' + ' and his best friend is called '+ jonasObject.friends[0]);//esta es una forma
+
+console.log(`${jonasObject.firstName} has ${jonasObject.friends.length} friends, and his best friend is called ${jonasObject.friends[0]}`);//otra forma
+
+//Métodos para objetos:
+const jonasObject2 = {//aqui meto las propiedades del objeto jonasObject
+    firstName: 'Jonas',
+    lastName: 'Schmedtmann',
+    birthYear2: 1991,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven'],
+    hasDriversLicense: false,
+
+    //Puedo crear un método para este objeto, así:(aquí dentro no puedo meter una función). esto es pues, un valor de una función
+    // calcAge5: function(birthYear) {
+    //     return 2037 - birthYear;
+    // }
+
+    //Para evitar confusiones con la birthyear, puedo usar la palabra this: y así apuntará al birthyear del objeto
+    // calcAge: function() {
+    //     console.log(this);//imprime todas las propiedades del jonasObject
+    //     return 2037 - this.birthYear2;//pongo el this para que acceda a esa propiedad en concreto del jonasObject
+    // }
+
+    //Pero la mejor práctica es hacerlo de la siguiente manera, porque así lo meto en una nueva propiedad del objeto, es decir, añado una nueva propiedad con un método:
+    calcAge: function() {
+        this.age = 2037 - 1991;
+        return this.age;
+    },
+
+    getSummary: function() {
+        return `${this.firstName} is a ${this.calcAge()} years old ${jonasObject2.job} and he has ${this.hasDriversLicense ? 'a' : 'no'} drivers license`;
+    }
+};
+
+//En lugar del método, podría crear una función fuera del objeto, talque así:
+//const calcAge5 = function(birthYear) {
+//    return 2037 - 1991;
 //}
 
-//función flecha: la expresión que pongo en linea 63 es el equivalente a la función de las lineas 58-60
-const calcAge3 = birthYear => 2037 - birthYear;//cojo el parámetro birthyear y después de la flecha le pongo el valor que quiero que tenga, y a continuación lo meto en una constante
-//no necesito ni llaves ni el return en la función flecha. Lo que sí que debo hacer es llamarla para que se ejecute:
-console.log (calcAge3(1992));//o de otra forma sería:
-const age3 = calcAge3(1992);
-console.log (age3);//imprime lo mismo que la línea 65
+// console.log('Jonas is: ' + jonasObject2.calcAge5(1991));
+// console.log('Jonas is: ' + jonasObject2['calcAge5'](1991));//de otra forma
 
-const yearsUntilRetirement = birthYear => {
-    const age = 2037 - birthYear;
-    const retirement = 65 - age;
-    return retirement;
-}
-console.log(yearsUntilRetirement(1991));//1991 es el valor del parámetro birthyear que es lo que pongo justo antes de la flecha
+//console.log(jonasObject2.calcAge());
 
-//si tuviera varios parámetros:
-const yearsUntilRetirement2 = (birthYear, firstName) => {
-    const age = 2037 - birthYear;
-    const retirement = 65 - age;
-    return `${firstName} retires in ${retirement} years`;
-}
-console.log(yearsUntilRetirement2(1991, 'Jonas'));
-console.log(yearsUntilRetirement2(1980, 'Bob'));//Veo que puedo poner los valores que quiera a los parámetros, las veces que quiera
+console.log(jonasObject2.calcAge());//debo llamar al método si quiero que luego me imprima la propiedad que añadí nueva, porque sino esa nueva propiedad aún no existe
+console.log(jonasObject2.age);//después de llamar al método ya puedo pedir la nueva propiedad
 
-//Functions calling other functions:
-function cutFruitPieces(fruit) {
-    return fruit * 4;
-}
+//Challenge: Jonas is a 46 year old teacher and he has a/no drivers's license
 
-function fruitProcessor(apples, oranges) {//ahí en los () van los parámetros, estos reservan espacios vacíos a rellenar cuando llamemos a la función para que se ejecute y le metemos su valor en el paréntesis en ese momento
-    const applePieces = cutFruitPieces(apples);
-    const orangePieces = cutFruitPieces(oranges);
-    const juice = `Juice with ${applePieces} apples and ${orangePieces} oranges.`;
-    return juice;
-}
-console.log(fruitProcessor(2, 3));
+//Puedo hacerlo así:
+// if (jonasObject2.hasDriversLicense) {
+//     console.log(`${jonasObject2.firstName} is a ${jonasObject2.age} years old ${jonasObject2.job} and he has a drivers license`);
+// } else {
+//     console.log(`${jonasObject2.firstName} is a ${jonasObject2.age} years old ${jonasObject2.job} and he has no drivers license`);
+// }
 
-//Arrays:
-const friend1 = 'Michael';
-const friend2 = 'Steven';
-const friend3 = 'Peter';
-
-const friends = ['Michael', 'Steven', 'Peter'];
-console.log(friends);
-
-const years = new Array(1991, 1984, 2000);//otra manera de crear un array es esta
-console.log(years[1]);
-
-console.log(friends[0]);
-console.log(friends.length);//me da el número de elementos del array
-console.log(friends[friends.length-1]);//imprime el último elemento de mi array
-
-friends[2] = 'Jay';//así consigo que cambie Peter por Jay
-console.log(friends[2]);
-//Ojo, declaré el array friends como una const, así que sólo puedo mutar elemento a elemento, pero no el array entero del tirón
-
-const firstName = 'Jonas';
-const jonas = [firstName, 'Schmedtmann', 2037 - 1991, 'teacher', friends];//Puedo meterle distintos tipos al array
-console.log(jonas);
-
-//Exercise:
-function calcAge4(birthYear) {
-    const age = 2037 - birthYear;
-    return 2037 - birthYear;
-}
-const years2 = [1990, 1967, 2002, 2010, 2018];
-
-console.log(calcAge4(years2));//NaN, no puedo hacer esto
-
-const age4 = calcAge4(years2[0]);
-const age5 = calcAge4(years2[1]);
-const age6 = calcAge4(years2[years.length-1]);//para que coja el último elemento de mi array
-console.log(age4, age5, age6)
-
-const ages = [calcAge4(years2[0]), calcAge4(years2[1]), calcAge4(years2[years.length-1])];
-console.log(ages);
+// O también con operador ternario:
+console.log( `${jonasObject2.firstName} is a ${jonasObject2.age} years old ${jonasObject2.job} and he has ${jonasObject2.hasDriversLicense ? 'a' : 'no'} drivers license`);
 
 
-//Add elements to an array:
-// const friends = ['Michael', 'Steven', 'Peter'];
-friends.push('Jay');//El método push() añade Jay al final del array friends y me dice la longitud del nuevo array
-console.log(friends);
-
-const lengthArray = friends.push();//me da la longitud del array friends
-console.log(lengthArray);
-
-friends.unshift('John');//unshift() añade un elemento al inicio del array y me da su longitud
-console.log(friends);
-
-//Remove elements from array:
-friends.pop();//elimina el último elemento del array y me da su longitud
-console.log(friends);
-
-const poppedElement = friends.pop();//esta const guarda el array friends menos el último elemento
-console.log(poppedElement);//y aquí se imprime ese último elemento que eliminó
-
-friends.shift();//elimina el primer elemento del array me da su longitud
-console.log(friends);
-
-console.log(friends.indexOf('Michael'));//me da la posición en que se encuentra Michael en el array
-console.log(friends.indexOf('Patricia'));//como este elemento no existe en mi array, me da -1
-
-console.log(friends.includes('Michael'));//devuelve true
-console.log(friends.includes('Patricia'));//devuelve false
-
-friends.push(23);//añado número 23
-console.log(friends);
-console.log(friends.includes('23'));//me da false porque aquí meto un string en lugar de un número
-console.log(friends.includes(23));//true porque esto sí es un número
-
-if (friends.includes('Steven')) {
-    console.log('You have a friend called Steven');
-};
-if (friends.includes('Peter')) {
-    console.log('You have a friend called Peter');//no hace nada porque el array no contiene Peter
-
-    
-}
-
+//O puedo hacerlo añadiendo el método getSummary al jonasObject, que es mejor práctica
+console.log(jonasObject2.getSummary());
