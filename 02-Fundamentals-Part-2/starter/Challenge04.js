@@ -45,29 +45,33 @@
 // 4.3. Call the function with the 'totals' array
 // GOOD LUCK �
 
-let arr = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];//pongo este como ejemplo, pero puedo meterle lo que quiera 
+//Mi manera:
+// let arr = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];//pongo este como ejemplo, pero puedo meterle lo que quiera 
 
-let sum = 0;
+// let sum = 0;
 
-for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-    // console.log (sum); 
-};
+// for (let i = 0; i < arr.length; i++) {
+//     sum += arr[i];
+//     // console.log (sum); 
+// };
 
-function calcAverage2() {
-    let totalAverage = sum / arr.length;
-    return (totalAverage);
-};
+// function calcAverage2() {
+//     let totalAverage = sum / arr.length;
+//     return (totalAverage);
+// };
 
-console.log(calcAverage2(arr));
+// console.log(calcAverage2([arr]));
 
-// const calcAverage2 = function(arr) {
-//     let sum = 0;
-//     for (let i = 0; i < arr.length; i++) {
-//         sum += arr[i]; //sum = sum + arr[i];
-//     };
-//     console.log (sum); 
 
-// }
-//calcAverage2(arr);
+//Jonas way:
+const calcAverage3 = function(arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    return sum / arr.length;
+}
+console.log(calcAverage3([2,3,7]));
+console.log(calcAverage3(totalsArray));
+console.log(calcAverage3(tipsArray));
 
