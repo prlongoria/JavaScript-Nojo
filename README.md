@@ -1,4 +1,4 @@
-Repositorio con ejercicios para repasar JavaScript
+Repositorio con ejercicios para repasar todo JavaScript, curso que sigo de Udemy
 
 # Course Material and FAQ for my Complete JavaScript Course
 
