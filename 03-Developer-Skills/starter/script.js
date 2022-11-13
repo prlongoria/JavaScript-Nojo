@@ -79,3 +79,39 @@ const calcTempAmplitude2 = function(temperature1, temperature2){
 
 const amplitude2 = calcTempAmplitude2([3, 5, 1], [9, 0, 5]);
 console.log(amplitude2);
+
+//Debugging: quiero que mi termómetro me dé la temperatura en kelvin y voy a provocar un error para hacer debug y encontrarlo
+const measureKelvin = function(){
+    const measurement = { //creo un objeto
+        type: 'temperature',
+        unit: 'celsius',
+        //value: prompt('Degrees celsius: '), //para que me pida la temperatura y convertirla a kelvin. Así lo tenía antes de encontrar el error
+        //Para que convierta el string a number:
+        value: Number(prompt('Degrees Celsius: ')),
+    };
+    console.log(measurement.value);
+    console.warn(measurement.value);//imprime un warning si lo hay
+    console.error(measurement.value);//imprime un error si lo hay
+
+    console.log(measurement);//imprime el objeto completo
+    console.table(measurement);//imprime el objeto en una tabla
+
+
+    const kelvin = measurement.value + 273; //creo que es simplemente sumar al valor de esa temperatura, 273, pero no funciona porque imprime una concatenación, no una suma
+    return kelvin;
+};
+console.log(measureKelvin());
+ //1.-Identificar el error (bug): Concatena los valores
+ //2.-Encontrar el error:
+ //veo que imprime concatenación de la const kelvin, así que hago un console.log de lo que hace la función measureKelvin
+ //También puedo hacer console.warn y console.error que me imprimen errores y advertencias en consola
+ //Como todo parece correcto, miro ahora más en profundidad el objeto: pido que imprima el objeto entero:measurement.
+ //Y es ahora cuando veo que el value es un string, por eso lo concatena. 
+ //3.-Solucinoar el error:convertir el string a número
+
+ //El debug se puede hacer directamente en Chrome: sources->script->veo mi código->pongo un breakpint en el punto donde creo tener el problema(en este caso en const kelvin), así cuando 
+ //cargue mi página, va a ejecutar justo hasta este punto y veré lo que se ve exactamente en este punto, incluidos los valores de todas las variable definidas, y ahí ya dando al play o al pause voy viendo lo que sale
+ //Sección 5, video 61 si quiero mirarlo porque lo entiendo regular ya que mi navegador tiene una versión más moderna y no actúa igual que la suya.
+
+ 
+ 
