@@ -1,6 +1,6 @@
 Yo cogí apuntes del curso en cada uno de los script de los starter de cada seccion (01Fundamentals, etc), e hice un archivo para cada challenge con eexplicaciones
 
-Repositorio con ejercicios para repasar JavaScript
+Repositorio con ejercicios para repasar JavaScript, curso que sigo de Udemy, Jonas Javascript
 
 # Course Material and FAQ for my Complete JavaScript Course
 
